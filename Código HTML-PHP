@@ -1,0 +1,71 @@
+<?php
+
+    if(isset($_POST['submit']))
+{
+    include_once('teste.php')
+    
+    $nome = $_POST['nome'];
+    $email = $_POST['eamil'];
+
+    $result = mysqli_query($conexão, INSERT INTO usuarios(nome, email) VALUE) 
+    ('$nome', '$email')
+
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <style>
+        body {
+            background-image: url('img/fundo2.jpg'); 
+            background-size: cover;         
+            background-repeat: no-repeat;    
+            background-position: center;    
+            font-family: Arial, sans-serif;  
+            color: white;   
+                          
+        }
+        
+    
+        
+        
+
+        form {
+            background: rgba(0, 0, 0, 0.8); 
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        input, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #28a745; 
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <form action="ecommerce.php" method="post">
+        <h2>Cadastro de Usuário</h2>
+
+        <input type="text" name="nome" placeholder="Nome Completo" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>
+
